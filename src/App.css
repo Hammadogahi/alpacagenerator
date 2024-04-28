@@ -1,38 +1,109 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  max-width: 1140px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: auto;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: nowrap;
+  gap: 25px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1,
+h2 {
+  text-transform: uppercase;
+}
+
+.main > div {
+  width: calc(50% - 25px);
+}
+
+.alpaca {
+  height: 500px;
+  position: relative;
+  margin: auto;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.images img {
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  z-index: 0;
+}
+
+img.img {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+img.eye {
+  z-index: 5;
+}
+
+/* Btns */
+
+.btns-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 99px;
+  padding: 15px 30px;
+  color: #333;
+  background: none;
+  border: 1px solid #333;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.accessory.img {
+  z-index: 10;
+}
+
+.btn.active {
+  background: #000080;
+  border-color: #000080;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .main {
+    flex-direction: column;
+  }
+  .main > div {
+    width: 100%;
+  }
+
+  .btnsComponent {
+    box-sizing: border-box;
+    padding: 20px;
   }
 }
